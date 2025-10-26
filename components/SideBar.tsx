@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Sheet, SheetContent, SheetTitle } from "./ui/sheet";
 import Link from "next/link";
 import { Home, User, Folder, Mail, Wrench } from "lucide-react";
+import { motion } from "framer-motion";
 export default function SideBar() {
   const navItems = [
     { href: "#home", icon: Home, label: "Home" },
@@ -20,14 +21,14 @@ export default function SideBar() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           side="left"
-          className="min-h-screen flex flex-col items-center justify-center gap-4 w-fit bg-yellow-500"
+          className="min-h-screen flex flex-col items-center justify-center gap-4 w-fit bg-linear-to-r from-slate-900 to-transparent"
         >
           <Link
             href={"#"}
-            className="text-white ml-10 flex items-center gap-4  w-fit mr-10"
+            className="text-slate-50 ml-10 flex items-center gap-4 w-fit mr-10 font-semibold"
           >
             <Home />
-            {isHovered && <p>Home</p>}
+            {isHovered && <motion.p>Home</motion.p>}
           </Link>
         </SheetContent>
       </Sheet>
