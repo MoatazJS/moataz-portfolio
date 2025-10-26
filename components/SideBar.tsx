@@ -25,25 +25,28 @@ export default function SideBar() {
             isHovered ? "w-32 md:w-48" : "w-20"
           }`}
         >
-          <Link
-            href={"#"}
-            className="text-slate-50 ml-4 md:ml-8 flex items-center gap-4 w-fit mr-10 font-semibold hover:text-slate-400"
-          >
-            <Home />
-            <AnimatePresence mode="wait">
-              {isHovered && (
-                <motion.p
-                  key="home-label"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  Home
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </Link>
+          {navItems.map(({ href, icon: Icon, label }) => (
+            <Link
+              key={label}
+              href={href}
+              className="text-slate-50 ml-4 md:ml-8 flex items-center gap-4 w-fit mr-10 font-semibold hover:text-slate-400"
+            >
+              <Icon />
+              <AnimatePresence mode="wait">
+                {isHovered && (
+                  <motion.p
+                    key={label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {label}
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </Link>
+          ))}
         </SheetContent>
       </Sheet>
     </>
