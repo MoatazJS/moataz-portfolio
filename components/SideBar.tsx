@@ -22,14 +22,14 @@ export default function SideBar() {
             animate={{ opacity: 0.4 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 left-20 md:left-48 bg-black pointer-events-none z-10"
+            className="fixed inset-0 left-0 md:left-48 bg-black pointer-events-none z-10"
           />
         )}
       </AnimatePresence>
       <aside
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`border-none fixed left-0 top-0-r-0 min-h-screen flex flex-col  justify-center gap-4  bg-linear-to-r from-slate-900  to-slate-900/0 transition-all duration-300 ease-in-out ${
+        className={`border-none fixed left-0 top-0-r-0 min-h-screen flex flex-col z-20  justify-center gap-4  bg-linear-to-r from-slate-900  to-slate-900/0 transition-all duration-300 ease-in-out ${
           isHovered ? "w-32 md:w-48" : "w-20"
         }`}
       >
