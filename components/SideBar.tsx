@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Sheet, SheetContent, SheetTitle } from "./ui/sheet";
 import Link from "next/link";
 import { Home, User, Folder, Mail, Wrench } from "lucide-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 export default function SideBar() {
   const navItems = [
     { href: "#home", icon: Home, label: "Home" },
@@ -25,10 +25,22 @@ export default function SideBar() {
         >
           <Link
             href={"#"}
-            className="text-slate-50 ml-10 flex items-center gap-4 w-fit mr-10 font-semibold"
+            className="text-slate-50 ml-10 flex items-center gap-4 w-fit mr-10 font-semibold hover:text-slate-400"
           >
             <Home />
-            {isHovered && <motion.p>Home</motion.p>}
+            <AnimatePresence mode="wait">
+              {isHovered && (
+                <motion.p
+                  key="home-label"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  Home
+                </motion.p>
+              )}
+            </AnimatePresence>
           </Link>
         </SheetContent>
       </Sheet>
