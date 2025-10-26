@@ -21,7 +21,7 @@ export default function SideBar() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           side="left"
-          className={`min-h-screen flex flex-col  justify-center gap-4  bg-linear-to-r from-slate-900 to-transparent transition-all duration-300 ease-in-out ${
+          className={`border-none min-h-screen flex flex-col  justify-center gap-4  bg-linear-to-r from-slate-900 to-transparent transition-all duration-300 ease-in-out ${
             isHovered ? "w-32 md:w-48" : "w-20"
           }`}
         >
