@@ -1,17 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Home, User, Folder, Mail, Wrench } from "lucide-react";
+import { Home, User, Folder, Mail, Wrench, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 export default function SideBar() {
   const navItems = [
-    { href: "#hero", icon: Home, label: "Hero" },
+    { href: "#hero", icon: Home, label: "Home" },
     { href: "#about", icon: User, label: "About" },
     { href: "#skills", icon: Wrench, label: "Skills" },
     { href: "#projects", icon: Folder, label: "Projects" },
     { href: "#contact", icon: Mail, label: "Contact" },
   ];
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
       <AnimatePresence>
@@ -22,14 +23,14 @@ export default function SideBar() {
             animate={{ opacity: 0.4 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 left-0 md:left-48 bg-black pointer-events-none z-10"
+            className="fixed inset-0 left-0 bg-black pointer-events-none z-10"
           />
         )}
       </AnimatePresence>
       <aside
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`border-none fixed left-0 top-0-r-0 min-h-screen flex flex-col z-20  justify-center gap-4  bg-linear-to-r from-slate-900  to-slate-900/0 transition-all duration-300 ease-in-out ${
+        className={`border-none fixed left-0 top-0-r-0 min-h-screen hidden md:flex flex-col z-20  justify-center gap-4  bg-linear-to-r from-slate-900  to-slate-900/0 transition-all duration-300 ease-in-out ${
           isHovered ? "w-32 md:w-48" : "w-20"
         }`}
       >
@@ -56,6 +57,7 @@ export default function SideBar() {
           </Link>
         ))}
       </aside>
+      {/* mobile version with glowing arrow  */}
     </>
   );
 }
