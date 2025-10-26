@@ -21,11 +21,13 @@ export default function SideBar() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           side="left"
-          className="min-h-screen flex flex-col items-center justify-center gap-4 w-fit bg-linear-to-r from-slate-900 to-transparent"
+          className={`min-h-screen flex flex-col  justify-center gap-4  bg-linear-to-r from-slate-900 to-transparent transition-all duration-300 ease-in-out ${
+            isHovered ? "w-32 md:w-48" : "w-20"
+          }`}
         >
           <Link
             href={"#"}
-            className="text-slate-50 ml-10 flex items-center gap-4 w-fit mr-10 font-semibold hover:text-slate-400"
+            className="text-slate-50 ml-4 md:ml-8 flex items-center gap-4 w-fit mr-10 font-semibold hover:text-slate-400"
           >
             <Home />
             <AnimatePresence mode="wait">
@@ -35,7 +37,7 @@ export default function SideBar() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.3 }}
                 >
                   Home
                 </motion.p>
