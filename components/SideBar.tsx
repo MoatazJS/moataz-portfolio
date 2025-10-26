@@ -14,6 +14,18 @@ export default function SideBar() {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   return (
     <>
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            key="overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 left-20 md:left-48 bg-black pointer-events-none z-10"
+          />
+        )}
+      </AnimatePresence>
       <aside
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
