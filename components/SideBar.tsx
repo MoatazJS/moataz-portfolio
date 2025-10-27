@@ -82,7 +82,8 @@ export default function SideBar() {
             animate={{ opacity: 0.4 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 left-0 bg-black pointer-events-none z-10"
+            className="fixed inset-0 left-0 bg-black z-10"
+            onClick={() => ToggleSidebar()}
           />
         )}
       </AnimatePresence>
@@ -140,6 +141,7 @@ export default function SideBar() {
           >
             {navItems.map(({ href, icon: Icon, label }) => (
               <Link
+                onClick={() => ToggleSidebar()}
                 key={label}
                 href={href}
                 className="text-slate-50 ml-4 md:ml-8 flex items-center gap-4 w-fit mr-10 font-semibold hover:text-slate-400"
