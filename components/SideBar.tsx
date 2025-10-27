@@ -1,15 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import {
-  Home,
-  User,
-  Folder,
-  Mail,
-  Wrench,
-  ChevronRight,
-  ChevronLeft,
-} from "lucide-react";
+import { Home, User, Folder, Mail, Wrench, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 export default function SideBar() {
   const navItems = [
@@ -112,28 +104,6 @@ export default function SideBar() {
       )}
       {isOpen && (
         <>
-          <ChevronLeft
-            className="
-    md:hidden
-    fixed
-    top-1/2
-    left-28
-    -translate-y-1/2
-    text-slate-100
-    w-8 h-8
-    p-2
-    cursor-pointer
-    rounded-full
-    bg-slate-900/80
-    border border-cyan-400/60
-    shadow-[0_0_20px_6px_#38bdf8]
-    transition-all
-    duration-300
-    hover:scale-110
-    z-30
-  "
-            onClick={() => ToggleSidebar()}
-          />
           <aside
             className={`border-none fixed left-0 top-0-r-0 min-h-screen md:hidden flex flex-col z-20  justify-center gap-4  bg-linear-to-r from-slate-900  to-slate-900/0 transition-all duration-300 ease-in-out
             w-32 
