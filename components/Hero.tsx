@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 export default function Hero() {
   return (
@@ -68,7 +69,20 @@ export default function Hero() {
                 />
               </motion.div>
             </div>
-            <div>CTA buttons</div>
+            <div className="flex gap-4 justify-center md:gap-4 md:justify-start mt-4 md:mt-6">
+              <Link
+                href={"#projects"}
+                className="bg-indigo-600 hover:bg-indigo-500 font-medium transition rounded-lg px-4 py-2 text-white"
+              >
+                Contact Me
+              </Link>
+              <Link
+                href={"#projects"}
+                className=" hover:bg-slate-800 rounded-lg px-4 py-2 text-slate-100 border border-slate-300 transition"
+              >
+                View Projects
+              </Link>
+            </div>
           </div>
           <div>
             <Image
