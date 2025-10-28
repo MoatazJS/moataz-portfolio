@@ -9,7 +9,12 @@ export default function Hero() {
         id="Hero"
         className="bg-slate-950 min-h-screen flex justify-center items-center "
       >
-        <div className="mx-auto container flex flex-col items-center justify-center text-slate-100 md:flex md:flex-row md:justify-around md:items-center ">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto container flex flex-col items-center justify-center text-slate-100 md:flex md:flex-row md:justify-around md:items-center "
+        >
           <div className="grid grid-cols-1 text-center md:text-start">
             <h1 className="font-bold text-slate-300 text-xl md:text-3xl lg:text-4xl">
               Hi, I’m Moataz.
@@ -75,7 +80,7 @@ export default function Hero() {
               priority
             ></Image>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );
