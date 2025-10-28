@@ -74,7 +74,17 @@ export default function Hero() {
                 href={"#projects"}
                 className="bg-indigo-600 hover:bg-indigo-500 font-medium transition rounded-lg px-4 py-2 text-white"
               >
-                Contact Me
+                <motion.p
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{
+                    repeat: 1,
+                    duration: 0.6,
+                    ease: "easeInOut",
+                    delay: 4.5,
+                  }}
+                >
+                  Contact Me
+                </motion.p>
               </Link>
               <Link
                 href={"#projects"}
