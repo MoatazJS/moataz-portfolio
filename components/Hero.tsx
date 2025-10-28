@@ -21,7 +21,27 @@ export default function Hero() {
               I develop web applications with a blend of clean design and
               efficient code.
             </p>
-            <div>logos</div>
+            <div className="flex gap-2 my-2 justify-center md:justify-start">
+              <Image
+                src={"/NextJs.svg"}
+                alt="Nextjs logo"
+                width={30}
+                height={30}
+                className="invert brightness-200"
+              />
+              <Image
+                src={"/ReactLogo.svg"}
+                alt="React logo"
+                width={30}
+                height={30}
+              />
+              <Image
+                src={"/TailwindCss.svg"}
+                alt="Tailwind logo"
+                width={30}
+                height={30}
+              />
+            </div>
             <div>CTA buttons</div>
           </div>
           <div>
