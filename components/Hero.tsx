@@ -1,5 +1,5 @@
+import Image from "next/image";
 import React from "react";
-
 export default function Hero() {
   return (
     <>
@@ -22,9 +22,18 @@ export default function Hero() {
               efficient code.
             </p>
             <div>logos</div>
-            <div>buttons</div>
+            <div>CTA buttons</div>
           </div>
-          <div>dada</div>
+          <div>
+            <Image
+              src={"/photo1.jpg"}
+              width={400}
+              height={300}
+              alt="Moataz's Photo"
+              className="object-contain rounded-3xl w-2xs h-2xs mt-4 mr-0 md:mt-0 md:mr-36"
+              priority
+            ></Image>
+          </div>
         </div>
       </section>
     </>
