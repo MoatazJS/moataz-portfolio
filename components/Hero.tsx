@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 export default function Hero() {
@@ -22,25 +24,44 @@ export default function Hero() {
               efficient code.
             </p>
             <div className="flex gap-2 my-2 justify-center md:justify-start">
-              <Image
-                src={"/NextJs.svg"}
-                alt="Nextjs logo"
-                width={30}
-                height={30}
-                className="invert brightness-200"
-              />
-              <Image
-                src={"/ReactLogo.svg"}
-                alt="React logo"
-                width={30}
-                height={30}
-              />
-              <Image
-                src={"/TailwindCss.svg"}
-                alt="Tailwind logo"
-                width={30}
-                height={30}
-              />
+              <motion.div
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.1 }}
+              >
+                <Image
+                  src={"/NextJs.svg"}
+                  alt="Nextjs logo"
+                  width={30}
+                  height={30}
+                  className="invert brightness-200"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.1 }}
+              >
+                <Image
+                  src={"/ReactLogo.svg"}
+                  alt="React logo"
+                  width={30}
+                  height={30}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.1 }}
+                className="mt-1"
+              >
+                <Image
+                  src={"/TailwindCss.svg"}
+                  alt="Tailwind logo"
+                  width={30}
+                  height={30}
+                />
+              </motion.div>
             </div>
             <div>CTA buttons</div>
           </div>
