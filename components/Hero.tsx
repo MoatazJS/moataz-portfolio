@@ -13,7 +13,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8 }}
           className="mx-auto container flex flex-col items-center justify-center text-slate-100 md:flex md:flex-row md:justify-around md:items-center "
         >
           <div className="grid grid-cols-1 text-center md:text-start">
