@@ -10,7 +10,7 @@ export default function About() {
       >
         <div className="text-white flex flex-col-reverse md:flex-row justify-around items-center gap-10 mx-auto container">
           <div className="max-w-xl">
-            <p className="text-center md:text-start my-4 md:my-40 text-lg mx-4 leading-relaxed md:mx-0 md:text-2xl text-slate-300">
+            <p className="text-center md:text-start text-lg mx-4 leading-relaxed md:mx-0 md:text-2xl text-slate-300">
               <span className="font-semibold text-xl md:text-3xl bg-linear-to-r from-indigo-400 to-blue-500 text-transparent bg-clip-text">
                 I&apos;m a front-end developer
               </span>{" "}
@@ -23,11 +23,11 @@ export default function About() {
           </div>
           <div className="w-[200px] md:w-[400px]">
             <Image
-              src={"/illustration.png"}
+              src={"/svg.png"}
               alt="illustration of a person using pc"
               width={300}
               height={300}
-              className="rounded-full mt-10"
+              className="rounded-full mt-2 m:mt-0 mb-10"
             />
           </div>
         </div>
