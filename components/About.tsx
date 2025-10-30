@@ -13,21 +13,23 @@ export default function About() {
             <p className="text-center md:text-start text-xl mx-4 leading-relaxed md:mx-0 font-semibold  md:text-3xl bg-linear-to-r from-indigo-400 to-blue-500 text-transparent bg-clip-text">
               <span className="">I&apos;m a front-end developer</span>
             </p>
-            <ul className="text-center md:text-start leading-relaxed mx-2 md:mx-0">
+            <ul className="list-disc list-inside space-y-2 text-center md:text-start leading-relaxed mx-2 md:mx-0">
               <li>
-                building smooth, meaningful web experiences with modern tools.
+                Building smooth, meaningful web experiences with modern tools.
               </li>
               <li>
-                My focus is writing clean code, creating reusable components,
-                and bringing designs to life with attention to detail and
-                performance.
+                Writing clean code, creating reusable components, and bringing
+                designs to life with attention to detail and performance.
               </li>
               <li>
-                consistently improving through hands-on projects and exploring
+                Consistently improving through hands-on projects and exploring
                 backend development to expand into full-stack in the future.
               </li>
               <li>Located in Alexandria, Egypt.</li>
-              <li></li>
+              <li>
+                Currently open to junior front-end opportunities and freelance
+                projects.
+              </li>
             </ul>
           </div>
           <div className="w-[200px] md:w-[400px]">
