@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
-import { Code2Icon, PaletteIcon, ZapIcon, BrainCircuit } from "lucide-react";
+import {
+  Code2Icon,
+  PaletteIcon,
+  ZapIcon,
+  BrainCircuit,
+  DatabaseIcon,
+} from "lucide-react";
 import { easeInOut, motion } from "framer-motion";
 export default function Skills() {
   return (
@@ -11,7 +17,12 @@ export default function Skills() {
       >
         <div className="min-h-fit  grid grid-cols-1 md:grid-cols-3 text-white align-middle gap-4 md:gap-8 my-4 md:my-0 mx-2 md:mx-0">
           {/* first card */}
-          <div className="bg-linear-to-b md:bg-linear-to-r from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: easeInOut }}
+            className="bg-linear-to-b md:bg-linear-to-r from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -40,9 +51,14 @@ export default function Skills() {
                 React, Next.js, TypeScript, JavaScript
               </p>
             </motion.div>
-          </div>
+          </motion.div>
           {/* second card */}
-          <div className="bg-linear-to-b md:bg-linear-to-b from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: easeInOut }}
+            className="bg-linear-to-b md:bg-linear-to-b from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -71,9 +87,14 @@ export default function Skills() {
                 Tailwind CSS, Shadcn/UI, Framer Motion
               </p>
             </motion.div>
-          </div>
+          </motion.div>
           {/* third card */}
-          <div className="bg-linear-to-b md:bg-linear-to-l from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: easeInOut }}
+            className="bg-linear-to-b md:bg-linear-to-l from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -102,16 +123,21 @@ export default function Skills() {
                 SEO, Optimization, Web Vitals
               </p>
             </motion.div>
-          </div>
+          </motion.div>
           {/* 4th card */}
-          <div className="bg-linear-to-b md:bg-linear-to-r from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: easeInOut }}
+            className="bg-linear-to-b md:bg-linear-to-r from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.3, ease: easeInOut }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <Code2Icon className="w-9 h-9 md:w-12 md:h-12" />
+              <DatabaseIcon className="w-9 h-9 md:w-12 md:h-12" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -133,9 +159,14 @@ export default function Skills() {
                 Redux, Jotai, React Query
               </p>
             </motion.div>
-          </div>
+          </motion.div>
           {/* 5th card */}
-          <div className="bg-linear-to-b md:bg-linear-to-t from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: easeInOut }}
+            className="bg-linear-to-b md:bg-linear-to-t from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -164,9 +195,14 @@ export default function Skills() {
                 Git, Vite, Vercel, Postman
               </p>
             </motion.div>
-          </div>
+          </motion.div>
           {/* 6th card */}
-          <div className="bg-linear-to-b md:bg-linear-to-l from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <motion.div
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: easeInOut }}
+            className="bg-linear-to-b md:bg-linear-to-l from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -195,7 +231,7 @@ export default function Skills() {
                 Responsive, Adaptive UI, Media Queries
               </p>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
