@@ -1,6 +1,7 @@
+"use client";
+import { easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-
 export default function About() {
   return (
     <>
@@ -9,7 +10,13 @@ export default function About() {
         className="bg-indigo-950 min-h-screen md:min-h-fit flex justify-center items-center "
       >
         <div className="text-white flex flex-col-reverse md:flex-row justify-around items-center gap-0 md:gap-10 mx-auto container">
-          <div className="max-w-xl">
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.8, ease: easeInOut }}
+            className="max-w-xl"
+          >
             <p className="text-center md:text-start text-xl mx-4 leading-relaxed md:mx-0 font-semibold  md:text-3xl bg-linear-to-r from-indigo-400 to-blue-500 text-transparent bg-clip-text">
               <span className="">I&apos;m a front-end developer</span>
             </p>
@@ -32,13 +39,15 @@ export default function About() {
               </li>
             </ul>
             <div className="flex justify-center md:justify-start items-center gap-4 mt-6 mb-4 md:mb-0">
-              <a
+              <motion.a
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 0.5, ease: easeInOut, repeat: 5 }}
                 href={"/MoatazMamdouhCV.pdf"}
                 target="_blank"
                 className="bg-indigo-600 hover:bg-indigo-500 font-medium transition rounded-lg px-4 py-2 text-white"
               >
                 View Resume
-              </a>
+              </motion.a>
               <a
                 href={"/MoatazMamdouhCV.pdf"}
                 download={true}
@@ -47,8 +56,14 @@ export default function About() {
                 Download CV
               </a>
             </div>
-          </div>
-          <div className="w-[200px] md:w-[400px]">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.8, ease: easeInOut }}
+            className="w-[200px] md:w-[400px]"
+          >
             <Image
               src={"/svg.png"}
               alt="illustration of a person using pc"
@@ -56,7 +71,7 @@ export default function About() {
               height={300}
               className="rounded-full mt-2 m:mt-0 mb-10"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
