@@ -5,8 +5,11 @@ import { easeInOut, motion } from "framer-motion";
 export default function Skills() {
   return (
     <>
-      <section className="min-h-screen container mx-auto flex justify-center items-center">
-        <div className="min-h-fit  grid grid-cols-1 md:grid-cols-3 text-white align-middle gap-4 md:gap-8 mx-2 md:mx-0">
+      <section
+        id="skills"
+        className="min-h-screen container mx-auto flex justify-center items-center"
+      >
+        <div className="min-h-fit  grid grid-cols-1 md:grid-cols-3 text-white align-middle gap-4 md:gap-8 my-4 md:my-0 mx-2 md:mx-0">
           {/* first card */}
           <div className="bg-linear-to-b md:bg-linear-to-r from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
             <motion.div
