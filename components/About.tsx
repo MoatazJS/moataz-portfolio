@@ -5,15 +5,15 @@ export default function About() {
   return (
     <>
       <section
-        id="About"
-        className="bg-indigo-950 min-h-screen flex justify-center items-center "
+        id="about"
+        className="bg-indigo-950 min-h-screen md:min-h-fit flex justify-center items-center "
       >
-        <div className="text-white flex flex-col-reverse md:flex-row justify-around items-center gap-10 mx-auto container">
+        <div className="text-white flex flex-col-reverse md:flex-row justify-around items-center gap-0 md:gap-10 mx-auto container">
           <div className="max-w-xl">
             <p className="text-center md:text-start text-xl mx-4 leading-relaxed md:mx-0 font-semibold  md:text-3xl bg-linear-to-r from-indigo-400 to-blue-500 text-transparent bg-clip-text">
               <span className="">I&apos;m a front-end developer</span>
             </p>
-            <ul className="list-disc list-inside space-y-2 text-center md:text-start leading-relaxed mx-2 md:mx-0">
+            <ul className="list-disc list-inside space-y-2 text-center md:text-start  mx-2 md:mx-0">
               <li>
                 Building smooth, meaningful web experiences with modern tools.
               </li>
@@ -31,6 +31,22 @@ export default function About() {
                 projects.
               </li>
             </ul>
+            <div className="flex justify-center md:justify-start items-center gap-4 mt-6 mb-4 md:mb-0">
+              <a
+                href={"/MoatazMamdouhCV.pdf"}
+                target="_blank"
+                className="bg-indigo-600 hover:bg-indigo-500 font-medium transition rounded-lg px-4 py-2 text-white"
+              >
+                View Resume
+              </a>
+              <a
+                href={"/MoatazMamdouhCV.pdf"}
+                download={true}
+                className=" hover:bg-slate-800 rounded-lg px-4 py-2 text-slate-100 border border-slate-300 transition"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
           <div className="w-[200px] md:w-[400px]">
             <Image

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <>
       <section
-        id="Hero"
+        id="hero"
         className="bg-slate-950 min-h-screen flex justify-center items-center "
       >
         <motion.div
