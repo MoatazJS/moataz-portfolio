@@ -39,7 +39,7 @@ export default function Skills() {
             </motion.div>
           </div>
           {/* second card */}
-          <div className="bg-linear-to-t md:bg-linear-to-b from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+          <div className="bg-linear-to-b md:bg-linear-to-b from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -97,6 +97,37 @@ export default function Skills() {
             >
               <p className="text-sm md:text-[16px]">
                 SEO, Optimization, Web Vitals
+              </p>
+            </motion.div>
+          </div>
+          {/* 4th card */}
+          <div className="bg-linear-to-b md:bg-linear-to-r from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.3, ease: easeInOut }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <Code2Icon className="w-9 h-9 md:w-12 md:h-12" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.3, ease: easeInOut }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <h1 className="text-xl md:text-2xl bg-linear-to-l from-indigo-400 to-blue-500 bg-clip-text text-transparent">
+                State Management
+              </h1>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1.3, ease: easeInOut }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <p className="text-sm md:text-[16px]">
+                Redux, Jotai, React Query
               </p>
             </motion.div>
           </div>
