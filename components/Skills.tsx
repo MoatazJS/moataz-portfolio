@@ -162,6 +162,37 @@ export default function Skills() {
               </p>
             </motion.div>
           </div>
+          {/* 6th card */}
+          <div className="bg-linear-to-b md:bg-linear-to-l from-slate-800 rounded-lg hover:border-indigo-600  flex flex-col justify-center items-center text-center p-5">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.3, ease: easeInOut }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <ZapIcon className="w-9 h-9 md:w-12 md:h-12" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.3, ease: easeInOut }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <h1 className="text-xl md:text-2xl bg-linear-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent">
+                Mobile First
+              </h1>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1.3, ease: easeInOut }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <p className="text-sm md:text-[16px]">
+                Responsive, Adaptive UI, Media Queries
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>
