@@ -6,6 +6,7 @@ import {
   ZapIcon,
   BrainCircuit,
   DatabaseIcon,
+  TabletSmartphone,
 } from "lucide-react";
 import { easeInOut, motion } from "framer-motion";
 export default function Skills() {
@@ -209,7 +210,7 @@ export default function Skills() {
               transition={{ duration: 1.3, ease: easeInOut }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <ZapIcon className="w-9 h-9 md:w-12 md:h-12" />
+              <TabletSmartphone className="w-9 h-9 md:w-12 md:h-12" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
