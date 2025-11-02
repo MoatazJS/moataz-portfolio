@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-
 export default function Projects() {
   return (
     <>
@@ -8,8 +7,8 @@ export default function Projects() {
         <h1 className="mb-8 text-2xl md:text-4xl bg-linear-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent">
           Featured Projects
         </h1>
-        <div className="hidden sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 align-middle gap-6 text-slate-50 mb-8 ">
-          <div className="flex flex-col bg-slate-900 rounded-2xl w-auto min-w-2xs gap-4 ">
+        <div className="hidden sm:grid sm:grid-cols-2 sm:mx-2 md:grid md:grid-cols-3 align-middle gap-6 text-slate-50 mb-8">
+          <div className="flex flex-col bg-slate-900 rounded-2xl w-auto min-w-2xs gap-4 max-w-[350px]">
             <div className="flex justify-center items-center pt-8">
               <Image
                 src={"/FilmFlow.png"}
@@ -27,7 +26,7 @@ export default function Projects() {
             <div className="flex justify-center items-center gap-6 pb-6 bg-slate-800 pt-6 rounded-b-2xl">
               <a
                 href="#"
-                className="bg-indigo-600 capitalize hover:bg-indigo-500 font-medium transition rounded-lg w-28  px-4 py-2 text-center text-white"
+                className="bg-indigo-600 capitalize hover:bg-indigo-500 font-medium transition rounded-lg w-28 px-4 py-2 text-center text-white"
               >
                 github
               </a>
