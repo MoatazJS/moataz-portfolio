@@ -9,8 +9,8 @@ export default function Projects() {
       title: "FilmFlow",
       description:
         "An App for browsing,discovering and recommending movies for users.",
-      live: "#hhhh",
-      github: "#hhhhh",
+      live: "https://film-flow-lyart.vercel.app/",
+      github: "https://github.com/MoatazJS/FilmFlow",
     },
     {
       index: 2,
@@ -19,8 +19,8 @@ export default function Projects() {
       title: "ShopSphere",
       description:
         "An Ecommerce app with wish-list, cart and checkout functionality.",
-      live: "#hhhh",
-      github: "#hhhhh",
+      live: "https://shop-spheres.vercel.app/",
+      github: "https://github.com/MoatazJS/Shop-Sphere",
     },
     {
       index: 3,
@@ -28,13 +28,16 @@ export default function Projects() {
       imageAlt: "Echo Display Photo.",
       title: "Echo",
       description: "An App allowing users to create,update and delete notes.",
-      live: "#hhhh",
-      github: "#hhhhh",
+      live: "https://echo-note-app.vercel.app/",
+      github: "https://github.com/MoatazJS/Note-App",
     },
   ];
   return (
     <>
-      <section className="min-h-screen  flex flex-col items-center justify-center ">
+      <section
+        id="projects"
+        className="min-h-screen  flex flex-col items-center justify-center "
+      >
         <h1 className="mb-8 text-2xl md:text-4xl bg-linear-to-r from-indigo-400 to-blue-500 bg-clip-text text-transparent">
           Featured Projects
         </h1>
