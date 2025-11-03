@@ -1,3 +1,5 @@
+"use client";
+import { easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 export default function Projects() {
@@ -43,9 +45,13 @@ export default function Projects() {
         </h1>
         <div className="hidden sm:grid sm:grid-cols-2 sm:mx-2 md:grid md:grid-cols-3 gap-8 place-items-center justify-center text-slate-50 mb-8">
           {projects.map((project) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: easeInOut }}
+              whileHover={{ scale: 1.1 }}
               key={project.index}
-              className="flex flex-col bg-slate-900 rounded-2xl w-full min-w-[250px] max-w-[350px] gap-4"
+              className="flex flex-col bg-slate-900 rounded-2xl w-full min-w-[250px] max-w-[350px] gap-4 h-[350px] hover:shadow-indigo-500 hover:shadow-lg"
             >
               <div className="flex justify-center items-center pt-8">
                 <Image
@@ -56,25 +62,43 @@ export default function Projects() {
                   className="px-2"
                 />
               </div>
-              <h4 className="font-bold text-center text-3xl text-transparent bg-linear-to-r from-indigo-400 to-blue-500 bg-clip-text">
+              <motion.h4
+                initial={{ y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: easeInOut }}
+                className="font-bold text-center text-3xl text-transparent bg-linear-to-r from-indigo-400 to-blue-500 bg-clip-text"
+              >
                 {project.title}
-              </h4>
-              <p className="text-center text-slate-50">{project.description}</p>
+              </motion.h4>
+              <motion.p
+                initial={{ y: 15 }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 1, ease: easeInOut }}
+                className="text-center text-slate-50"
+              >
+                {project.description}
+              </motion.p>
               <div className="flex justify-center items-center gap-6 pb-6 bg-slate-800 pt-6 rounded-b-2xl">
-                <a
+                <motion.a
+                  initial={{ x: -10 }}
+                  whileInView={{ x: 0 }}
+                  transition={{ duration: 0.8, ease: easeInOut }}
                   href={project.live}
                   className="bg-indigo-600 capitalize hover:bg-indigo-500 font-medium transition rounded-lg w-28 px-4 py-2 text-center text-white"
                 >
                   live demo
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  initial={{ x: 10 }}
+                  whileInView={{ x: 0 }}
+                  transition={{ duration: 0.8, ease: easeInOut }}
                   href={project.github}
                   className="hover:bg-slate-900 capitalize rounded-lg px-4 py-2 text-slate-100 border w-28 border-slate-300 text-center transition"
                 >
                   github
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
