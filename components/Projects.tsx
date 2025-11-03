@@ -49,7 +49,10 @@ export default function Projects() {
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easeInOut }}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{
+                scale: 1.1,
+                transition: { type: "spring", stiffness: 200, damping: 15 },
+              }}
               key={project.index}
               className="flex flex-col bg-slate-900 rounded-2xl w-full min-w-[250px] max-w-[350px] gap-4 h-[350px] hover:shadow-indigo-500 hover:shadow-lg"
             >
