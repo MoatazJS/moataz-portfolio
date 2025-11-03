@@ -4,7 +4,7 @@ export default function Projects() {
   const projects = [
     {
       index: 1,
-      imageSource: "/FilmFlow.png",
+      imageSource: "/FilmFlow2.png",
       imageAlt: "FilmFlow Display Photo.",
       title: "FilmFlow",
       description:
@@ -14,7 +14,7 @@ export default function Projects() {
     },
     {
       index: 2,
-      imageSource: "/ShopSphere.png",
+      imageSource: "/ShopSphere2.png",
       imageAlt: "ShopSphere Display Photo.",
       title: "ShopSphere",
       description:
@@ -51,8 +51,9 @@ export default function Projects() {
                 <Image
                   src={project.imageSource}
                   alt={project.imageAlt}
-                  width={200}
-                  height={200}
+                  width={350}
+                  height={350}
+                  className="px-2"
                 />
               </div>
               <h4 className="font-bold text-center text-3xl text-transparent bg-linear-to-r from-indigo-400 to-blue-500 bg-clip-text">
