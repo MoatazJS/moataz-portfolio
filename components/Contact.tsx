@@ -9,7 +9,7 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="min-h-screen  flex flex-col items-center justify-center gap-4 md:gap-8"
+        className="min-h-screen  flex flex-col items-center justify-center gap-6 md:gap-8"
       >
         <div>
           <h2 className="text-center text-3xl md:text-4xl text-transparent bg-linear-to-r p-2 from-indigo-500 to-blue-600 bg-clip-text">
@@ -20,7 +20,7 @@ export default function Contact() {
             free to reach out — I’d love to chat!
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-20 text-white">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-20 text-white">
           <div className="flex flex-col gap-2 ">
             <div className="flex gap-2 ">
               <div>
