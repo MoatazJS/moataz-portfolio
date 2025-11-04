@@ -1,7 +1,9 @@
 import { MailPlus, MapPin } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { Input } from "@/components/ui/input";
 import React from "react";
+import { Textarea } from "./ui/textarea";
 export default function Contact() {
   return (
     <>
@@ -18,7 +20,7 @@ export default function Contact() {
             free to reach out — I’d love to chat!
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-white">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-20 text-white">
           <div className="flex flex-col gap-2 ">
             <div className="flex gap-2 ">
               <div>
@@ -75,7 +77,22 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <div>form</div>
+          <div className="flex flex-col  gap-4 w-[350px]">
+            <Input
+              className="border-indigo-400"
+              type="email"
+              placeholder="Your Email"
+            />
+            <Input
+              className="border-indigo-400"
+              type="text"
+              placeholder="Your Name"
+            />
+            <Textarea
+              className="h-36 border-indigo-400"
+              placeholder="Your Message"
+            />
+          </div>
         </div>
       </section>
     </>
