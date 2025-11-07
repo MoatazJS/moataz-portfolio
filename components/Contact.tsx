@@ -1,14 +1,19 @@
+"use client";
 import { MailPlus, MapPin } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Input } from "@/components/ui/input";
-import React from "react";
+import React, { useState } from "react";
 import { Textarea } from "./ui/textarea";
 import { contactFormSchema } from "@/lib/schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { Button } from "./ui/button";
 export default function Contact() {
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+
   const {
     register,
     handleSubmit,
@@ -16,6 +21,27 @@ export default function Contact() {
   } = useForm({
     resolver: zodResolver(contactFormSchema),
   });
+  async function onSubmit(data: any) {
+    try {
+      setStatus("sending");
+
+      const response = await fetch("https://formspree.io/f/mnnokkew", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  }
   return (
     <>
       <section
@@ -91,7 +117,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col  gap-4 w-[350px]">
               <Input
-                {...register("name")}
+                {...register("email")}
                 className="border-indigo-400"
                 type="email"
                 placeholder="Your Email"
@@ -113,13 +139,31 @@ export default function Contact() {
                 </p>
               )}
               <Textarea
-                {...register("name")}
+                {...register("message")}
                 className="h-36 border-indigo-400"
                 placeholder="Your Message"
               />
               {errors.message && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.message.message}
+                </p>
+              )}
+              <Button
+                type="submit"
+                disabled={status === "sending"}
+                className="bg-indigo-600 capitalize hover:bg-indigo-500 font-medium transition rounded-lg w-28 px-4 py-2 text-center text-white cursor-pointer"
+              >
+                {status === "sending" ? "Sending..." : "Send Message"}
+              </Button>
+
+              {status === "success" && (
+                <p className="text-green-500 text-sm mt-2 text-center">
+                  Message sent successfully ✅
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-red-500 text-sm mt-2 text-center">
+                  Something went wrong. Try again.
                 </p>
               )}
             </div>
