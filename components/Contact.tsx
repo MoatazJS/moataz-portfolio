@@ -11,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "./ui/button";
 import { z } from "zod";
 import { toast } from "sonner";
+import { easeInOut, motion } from "framer-motion";
 export default function Contact() {
   type ContactFormData = z.infer<typeof contactFormSchema>;
   const [status, setStatus] = useState<
@@ -53,17 +54,32 @@ export default function Contact() {
         className="min-h-screen  flex flex-col items-center justify-center gap-6 md:gap-8"
       >
         <div>
-          <h2 className="text-center text-3xl md:text-4xl text-transparent bg-linear-to-r p-2 from-indigo-500 to-blue-600 bg-clip-text">
+          <motion.h2
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            className="text-center text-3xl md:text-4xl text-transparent bg-linear-to-r p-2 from-indigo-500 to-blue-600 bg-clip-text"
+          >
             Let&rsquo;s Work Together
-          </h2>
-          <p className="text-center text-xl md:text-2xl text-slate-50 mx-4 md:mx-0 ">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            className="text-center text-xl md:text-2xl text-slate-50 mx-4 md:mx-0 "
+          >
             I&rsquo;m currently open to junior front-end opportunities. Feel
             free to reach out — I’d love to chat!
-          </p>
+          </motion.p>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-20 text-white">
           <div className="flex flex-col gap-2 ">
-            <div className="flex gap-2 ">
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              className="flex gap-2 "
+            >
               <div>
                 <FontAwesomeIcon
                   icon={faEnvelope}
@@ -76,8 +92,13 @@ export default function Contact() {
                 </h4>
                 <p>moataz.webdev@gmail.com</p>
               </div>
-            </div>
-            <div className="flex gap-2">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              className="flex gap-2"
+            >
               <div>
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
@@ -90,8 +111,13 @@ export default function Contact() {
                 </h4>
                 <p>Alexandria, Egypt.</p>
               </div>
-            </div>
-            <div className="flex gap-2">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              className="flex gap-2"
+            >
               <div>
                 <FontAwesomeIcon
                   icon={faGithub}
@@ -106,8 +132,13 @@ export default function Contact() {
                   @MoatazJS
                 </a>
               </div>
-            </div>
-            <div className="flex gap-2">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              className="flex gap-2"
+            >
               <div>
                 <FontAwesomeIcon
                   icon={faXTwitter}
@@ -122,10 +153,15 @@ export default function Contact() {
                   @MoatazCodes
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col  gap-4 w-[350px]">
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: easeInOut, repeat: 0 }}
+              className="flex flex-col  gap-4 w-[350px]"
+            >
               <div>
                 <Input
                   {...register("email")}
@@ -169,7 +205,7 @@ export default function Contact() {
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </Button>
-            </div>
+            </motion.div>
           </form>
         </div>
       </section>
