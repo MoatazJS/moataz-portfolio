@@ -62,7 +62,7 @@ export default function Hero() {
                 className="mt-1"
               >
                 <Image
-                  src={"/TailwindCss.svg"}
+                  src={"/TailwindCSS.svg"}
                   alt="Tailwind logo"
                   width={30}
                   height={30}
