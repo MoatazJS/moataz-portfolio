@@ -94,13 +94,13 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <div>
+          <div className="overflow-hidden">
             <Image
-              src={"/photo1.jpg"}
+              src={"/portfolio.jpg"}
               width={400}
               height={300}
               alt="Moataz's Photo"
-              className="object-contain rounded-3xl w-2xs h-2xs mt-4 mr-0 md:mt-0 md:mr-36"
+              className="object-contain rounded-3xl w-2xs h-2xs mt-4 mr-0 md:mt-0 md:mr-36 scale-110"
               priority
             ></Image>
           </div>
