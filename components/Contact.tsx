@@ -1,7 +1,7 @@
 "use client";
-import { MailPlus, MapPin } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import { Textarea } from "./ui/textarea";
@@ -9,11 +9,12 @@ import { contactFormSchema } from "@/lib/schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "./ui/button";
+import { z } from "zod";
 export default function Contact() {
+  type ContactFormData = z.infer<typeof contactFormSchema>;
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
-
   const {
     register,
     handleSubmit,
@@ -21,7 +22,7 @@ export default function Contact() {
   } = useForm({
     resolver: zodResolver(contactFormSchema),
   });
-  async function onSubmit(data: any) {
+  async function onSubmit(data: ContactFormData) {
     try {
       setStatus("sending");
 
@@ -61,7 +62,10 @@ export default function Contact() {
           <div className="flex flex-col gap-2 ">
             <div className="flex gap-2 ">
               <div>
-                <MailPlus className="text-indigo-500 w-8 h-8" />
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="text-indigo-500 text-3xl"
+                />
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-transparent bg-linear-to-r from-indigo-500 to-blue-600 bg-clip-text">
@@ -72,20 +76,23 @@ export default function Contact() {
             </div>
             <div className="flex gap-2">
               <div>
-                <MapPin className="text-indigo-500 w-8 h-8" />
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className="text-indigo-500 text-3xl"
+                />
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-transparent bg-linear-to-r from-indigo-500 to-blue-600 bg-clip-text">
                   Location
                 </h4>
-                <p>Alexandria,Egypt.</p>
+                <p>Alexandria, Egypt.</p>
               </div>
             </div>
             <div className="flex gap-2">
               <div>
                 <FontAwesomeIcon
                   icon={faGithub}
-                  className="text-indigo-500 w-8 h-8"
+                  className="text-indigo-500 text-3xl"
                 />
               </div>
               <div>
@@ -101,7 +108,7 @@ export default function Contact() {
               <div>
                 <FontAwesomeIcon
                   icon={faXTwitter}
-                  className="text-indigo-500 w-8 h-8"
+                  className="text-indigo-500 text-3xl"
                 />
               </div>
               <div>
