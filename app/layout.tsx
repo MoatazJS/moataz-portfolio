@@ -31,7 +31,19 @@ export default function RootLayout({
       >
         <SideBar />
         {children}
-        <Toaster />
+        <Toaster
+          position="top-center"
+          theme="dark"
+          richColors
+          toastOptions={{
+            style: {
+              background: "#1e293b",
+              color: "#f8fafc",
+              border: "1px solid #334155",
+            },
+            className: "rounded-xl shadow-lg",
+          }}
+        />
       </body>
     </html>
   );

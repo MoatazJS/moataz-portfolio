@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "./ui/button";
 import { z } from "zod";
+import { toast } from "sonner";
 export default function Contact() {
   type ContactFormData = z.infer<typeof contactFormSchema>;
   const [status, setStatus] = useState<
@@ -36,8 +37,10 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus("success");
+        toast.success("Message sent succesfully!");
       } else {
         setStatus("error");
+        toast.error("Error Occurred. Please try again.");
       }
     } catch (error) {
       setStatus("error");
@@ -123,38 +126,42 @@ export default function Contact() {
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col  gap-4 w-[350px]">
-              <Input
-                {...register("email")}
-                className="border-indigo-400"
-                type="email"
-                placeholder="Your Email"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-              <Input
-                {...register("name")}
-                className="border-indigo-400"
-                type="text"
-                placeholder="Your Name"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.name.message}
-                </p>
-              )}
-              <Textarea
-                {...register("message")}
-                className="h-36 border-indigo-400"
-                placeholder="Your Message"
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.message.message}
-                </p>
-              )}
+              <div>
+                <Input
+                  {...register("email")}
+                  className="border-indigo-400"
+                  type="email"
+                  placeholder="Your Email"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm ">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <Input
+                  {...register("name")}
+                  className="border-indigo-400"
+                  type="text"
+                  placeholder="Your Name"
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-sm">{errors.name.message}</p>
+                )}
+              </div>
+              <div>
+                <Textarea
+                  {...register("message")}
+                  className="h-36 border-indigo-400"
+                  placeholder="Your Message"
+                />
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
               <Button
                 type="submit"
                 disabled={status === "sending"}
@@ -162,17 +169,6 @@ export default function Contact() {
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </Button>
-
-              {status === "success" && (
-                <p className="text-green-500 text-sm mt-2 text-center">
-                  Message sent successfully ✅
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-red-500 text-sm mt-2 text-center">
-                  Something went wrong. Try again.
-                </p>
-              )}
             </div>
           </form>
         </div>
