@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
             <div className="flex gap-4 justify-center md:gap-4 md:justify-start mt-4 md:mt-6">
               <Link
-                href={"#projects"}
+                href={"#contact"}
                 className="bg-indigo-600 hover:bg-indigo-500 font-medium transition rounded-lg px-4 py-2 text-white"
               >
                 <motion.p
@@ -94,7 +94,7 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden">
+          <div>
             <Image
               src={"/portfolio.jpg"}
               width={400}
