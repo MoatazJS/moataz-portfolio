@@ -40,7 +40,7 @@ export default function Hero() {
                   alt="Nextjs logo"
                   width={30}
                   height={30}
-                  className="invert brightness-200"
+                  className="invert brightness-200 "
                 />
               </motion.div>
               <motion.div
@@ -100,7 +100,7 @@ export default function Hero() {
               width={400}
               height={300}
               alt="Moataz's Photo"
-              className="object-contain rounded-3xl w-2xs h-2xs mt-4 mr-0 md:mt-0 md:mr-36 scale-110"
+              className="object-contain rounded-3xl w-2xs h-2xs mt-6 mr-0 md:mt-0 md:mr-36 scale-110"
               priority
             ></Image>
           </div>
