@@ -42,14 +42,14 @@ export default function About() {
               <motion.a
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 0.5, ease: easeInOut, repeat: 5 }}
-                href={"/Moataz_Mamdouh.pdf"}
+                href={"/Moataz_MamdouhCV.pdf"}
                 target="_blank"
                 className="bg-indigo-600 hover:bg-indigo-500 font-medium transition rounded-lg px-4 py-2 text-white"
               >
                 View Resume
               </motion.a>
               <a
-                href={"/Moataz_Mamdouh.pdf"}
+                href={"/Moataz_MamdouhCV.pdf"}
                 download={true}
                 className=" hover:bg-slate-800 rounded-lg px-4 py-2 text-slate-100 border border-slate-300 transition"
               >
